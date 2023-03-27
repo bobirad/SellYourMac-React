@@ -21,7 +21,6 @@ export function Register() {
                 <button type="" class="register-btn btn">Register</button>
             </div>
             <Link class="link" to="/login">Already have an account? Log in here.</Link>
-
         </form>
     )
 }
