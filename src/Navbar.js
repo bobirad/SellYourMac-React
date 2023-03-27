@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, Link } from "react-router-dom";
 import { Home } from './pages/Home'
 import { Catalog } from './pages/Catalog';
 import { Login } from './pages/Login';
@@ -13,25 +13,25 @@ export default function Navbar() {
                 <div className="divider"></div>
                 <ul>
                     <li>
-                        <a href="/" className="nav-link">home</a>
+                        <Link to="/" className="nav-link">home</Link>
                     </li>
                     <li>
-                        <a href="/catalog" className="nav-link">catalog</a>
+                        <Link to="/catalog" className="nav-link">catalog</Link>
                     </li>
                     <li>
-                        <a href="/addlisting" className="nav-link">sell an item</a>
+                        <Link to="/addlisting" className="nav-link">sell an item</Link>
                     </li>
                     <li>
-                        <a href="/profile" className="nav-link">profile</a>
+                        <Link to="/profile" className="nav-link">profile</Link>
                     </li>
                     <li>
-                        <a href="/login" className="nav-link">login</a>
+                        <Link to="/login" className="nav-link">log in</Link>
                     </li>
                     <li>
-                        <a href="/logout" className="nav-link">logout</a>
+                        <Link to="/" className="nav-link">log out</Link>
                     </li>
                     <li>
-                        <a href="/register" className="nav-link">register</a>
+                        <Link to="/register" className="nav-link">register</Link>
                     </li>
                 </ul>
             </nav>
