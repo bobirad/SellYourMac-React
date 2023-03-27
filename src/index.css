@@ -49,7 +49,10 @@ html {
   justify-content: flex-end;
 
 }
-
+.navbar ul button{
+  height: 100%;
+  width: 100%;
+}
 .navbar ul li {
   padding: 30px 20px 25px;
   text-transform: uppercase;
