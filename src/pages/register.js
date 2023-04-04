@@ -18,7 +18,7 @@ export function Register() {
                 <input type="password" id="password" name="password" placeholder="Confirm your password" required minlength="6" />
             </div>
             <div class="btn-container">
-                <button type="" class="register-btn btn">Register</button>
+                <button  class="register-btn btn">Register</button>
             </div>
             <Link class="link" to="/login">Already have an account? Log in here.</Link>
         </form>

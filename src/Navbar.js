@@ -4,7 +4,8 @@ import { Catalog } from './pages/Catalog';
 import { Login } from './pages/Login';
 import { Register } from './pages/Register';
 import { Profile } from './pages/Profile';
-import { AddListing } from './pages/AddListing'
+import { AddListing } from './pages/AddListing';
+import { firebaseApp } from './config/firebase';
 export default function Navbar() {
     return (
         <>
@@ -28,7 +29,7 @@ export default function Navbar() {
                         <Link to="/login" className="nav-link">log in</Link>
                     </li>
                     <li>
-                        <Link to="/" className="nav-link">log out</Link>
+                        <button onClick={() => firebaseApp.signOut()} className="nav-link">log out</button>
                     </li>
                     <li>
                         <Link to="/register" className="nav-link">register</Link>

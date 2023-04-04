@@ -18,12 +18,11 @@
     text-align: center;
     background-color: #343e48;
     color: var(--my-red);
-    padding: 5px;
+    margin-top: 10px;
     text-transform: uppercase;
     letter-spacing: .2em;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 28px;
+    font-size: 22px;
 }
 
 .item-card .form-group {
@@ -45,7 +44,12 @@
     cursor: pointer;
     background-color: var(--my-yellow);
 }
-
+.divide {
+    position:sticky;
+    margin-left: 15px;
+    border: 1px solid var(--my-green);
+    width: 340px;
+  }
 
 .item-card label {
     letter-spacing: .1em;
@@ -55,7 +59,7 @@
 
 img {
     max-width: 350px;
-    max-height: 200px;
+    max-height: 190px;
 }
 @media (max-width:1160) {
     body {

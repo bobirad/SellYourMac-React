@@ -12,6 +12,7 @@ export function Catalog() {
                 <div class="form-group">
                     <label for="description">Macbook Pro year: 2020, condition: very good with minor scratches.</label>
                 </div>
+                <div className="divide"></div>
                 <div class="form-group">
                     <label for="price">2500BGN</label>
                 </div>
@@ -28,6 +29,7 @@ export function Catalog() {
                 <div class="form-group">
                     <label for="description">Macbook Pro year: 2020, condition: very good with minor scratches.</label>
                 </div>
+                <div className="divide"></div>
                 <div class="form-group">
                     <label for="price">2500BGN</label>
                 </div>
@@ -44,6 +46,7 @@ export function Catalog() {
                 <div class="form-group">
                     <label for="description">Macbook Pro year: 2020, condition: very good with minor scratches.</label>
                 </div>
+                <div className="divide"></div>
                 <div class="form-group">
                     <label for="price">2500BGN</label>
                 </div>
@@ -60,6 +63,7 @@ export function Catalog() {
                 <div class="form-group">
                     <label for="description">Macbook Pro year: 2020, condition: very good with minor scratches.</label>
                 </div>
+                <div className="divide"></div>
                 <div class="form-group">
                     <label for="price">2500BGN</label>
                 </div>
@@ -76,6 +80,7 @@ export function Catalog() {
                 <div class="form-group">
                     <label for="description">Macbook Pro year: 2020, condition: very good with minor scratches.</label>
                 </div>
+                <div className="divide"></div>
                 <div class="form-group">
                     <label for="price">2500BGN</label>
                 </div>
