@@ -1,5 +1,5 @@
 import './login.css'
-import { Link, Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../config/firebase'

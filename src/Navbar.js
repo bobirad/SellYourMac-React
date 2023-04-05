@@ -1,11 +1,11 @@
 import { Route, Routes, Link, Navigate } from "react-router-dom";
 import { useState, useEffect } from 'react';
-import { Home } from './components/Home'
-import { Catalog } from './components/Catalog';
-import { Login } from './components/auth/Login';
-import { Register } from './components/auth/Register';
-import { Profile } from './components/Profile';
-import { AddListing } from './components/AddListing';
+import { Home } from './pages/Home/Home'
+import { Catalog } from './pages/Catalog/Catalog';
+import { Login } from './pages/LogIn/Login';
+import { Register } from './pages/Register/Register';
+import { Profile } from './pages/Profile/Profile';
+import { AddListing } from './pages/AddListing/AddListing';
 import { PrivateRoutes } from './components/PrivateRouts';
 import { auth } from './config/firebase';
 import { useNavigate } from 'react-router-dom';
@@ -30,9 +30,7 @@ export default function Navbar() {
         auth.signOut()
         .then(() => {
             setLoggedIn(false);
-            return (
-                <Navigate to="/" />
-            )
+            navigate('/login');
         }).catch((error) => {
             alert(error);
         });
