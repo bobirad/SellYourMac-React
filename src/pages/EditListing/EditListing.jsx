@@ -1,43 +1,43 @@
-import './addListing.css'
+import './editListing.css'
 import { Link } from "react-router-dom";
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { collection, addDoc } from "firebase/firestore"; 
-import { db,auth } from '../../config/firebase';
+import { db } from '../../config/firebase';
 
-
-export const AddListing = () => {
+export const EditListing = () => {
     const [model, setModel] = useState("");
     const [year, setYear] = useState();
     const [price, setPrice] = useState();
     const [description, setDescription] = useState("");
     const [imageUrl, setImageUrl] = useState("");
 
-
     const navigate = useNavigate();
-    const handleAddListing = async (event) => {
+    const handleEditListing = async (event) => {
         event.preventDefault();
         //const ownerEmail = currentUser ? currentUser.email : 'unknown';
+        const collectionRef = collection(db, "items")
         const newItem = {
+                id :'',
                 model: model,
                 year: Number(year),
                 price: Number(price),
                 description: description,
                 imageUrl: imageUrl,
-                owner: auth.currentUser.email
+                //owner
           };
-
+      
         try {
-            const itemRef = await addDoc(collection(db, "items"), newItem);
-            navigate('/catalog');
+            await addDoc(collection(db, "items"), newItem);
+            navigate('/profile');
         } catch (error) {
             alert("Error adding document: " + error);
+
         }
     }
     
     return (
-        <>
-        <form className="addlisting-form" onSubmit={handleAddListing}>
+        <form className="addlisting-form" onSubmit={handleEditListing}>
             <h1>Add your listing</h1>
             <div className="form-group">
                 <label htmlFor="model">Model:</label>
@@ -96,9 +96,6 @@ export const AddListing = () => {
 
             </div>
         </form>
-        </>
-
     )
-
 }
 

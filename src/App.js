@@ -1,9 +1,28 @@
 import './App.css';
 import Navbar from './Navbar';
+import { useEffect, useState } from 'react';
+import { auth } from './config/firebase';
+import { onAuthStateChanged } from 'firebase/auth';
+
 function App() {
+  let [currentUser, setCurrentUser] = useState(null);
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setCurrentUser(user);
+        console.log('Current user:', user.uid);
+      } else {
+        setCurrentUser(null);
+        console.log('No user currently logged in.');
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
   return (
       <div className="App">
-        <Navbar />
+        <Navbar user = {currentUser}/>
       </div>
   );
 }

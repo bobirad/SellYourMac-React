@@ -6,7 +6,7 @@ import { auth } from '../../config/firebase'
 import { useNavigate } from 'react-router-dom';
 
 
-export function Login() {
+export function Login(props) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loggedIn, setLoggedIn] = useState(false);

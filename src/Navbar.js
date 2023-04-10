@@ -6,12 +6,14 @@ import { Login } from './pages/LogIn/Login';
 import { Register } from './pages/Register/Register';
 import { Profile } from './pages/Profile/Profile';
 import { AddListing } from './pages/AddListing/AddListing';
+import { ListingDetails} from './pages/ListingDetails/ListingDetails';
 import { PrivateRoutes } from './components/PrivateRouts';
 import { auth } from './config/firebase';
 import { useNavigate } from 'react-router-dom';
 
 
-export default function Navbar() {
+export default function Navbar(props) {
+    let {currentUser} = props;
     const [loggedIn, setLoggedIn] = useState(false);
     const navigate = useNavigate();
     useEffect(() => {
@@ -75,9 +77,11 @@ export default function Navbar() {
 
                 </ul>
             </nav>
+            <h1>{currentUser}</h1>
             <Routes>
                 <Route element={<PrivateRoutes />}>
                     <Route path="/catalog" element={<Catalog />} />
+                    <Route path="/catalog/:id" element={<ListingDetails />} />
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/addlisting" element={<AddListing />} />
                 </Route>

@@ -1,7 +1,7 @@
 
-.item-card {
+.item-details {
     max-width: 400px;
-    margin: 25px;
+    margin: 15px;
     margin-top: 50px;
     display: inline-block;    
     padding: 15px;
@@ -10,11 +10,9 @@
     transition: transform .3s;
 
 }
-.item-card:hover {
-    transform: scale(1.06);
-}
 
-.item-card h1 {
+
+.item-details .title {
     text-align: center;
     background-color: #343e48;
     color: var(--my-red);
@@ -25,19 +23,28 @@
     font-size: 22px;
 }
 
-.item-card .form-group {
+.item-details .details-group {
     font-size: 20px;
-    padding: 25px;
+    padding: 15px;
 }
 
-.btn-details {
-    background-color: var(--my-blue);
+.btn {
     letter-spacing: .1em;
     text-transform: uppercase;
     font-size: 18px;
     color: #ffffff;
     transition: all 300ms ease;
 
+}
+.loading {
+    font-size: 18px;
+
+}
+.btn-edit {
+    background-color: var(--my-green);
+}
+.btn-delete {
+    background-color: var(--my-red);
 }
 
 .btn:hover {
@@ -48,10 +55,10 @@
     position:sticky;
     margin-left: 15px;
     border: 1px solid var(--my-green);
-    width: 340px;
+    width: 300px;
   }
 
-.item-card label {
+.item-details label {
     letter-spacing: .1em;
     color: white;
     text-align: left;

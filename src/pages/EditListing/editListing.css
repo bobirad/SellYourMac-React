@@ -1,37 +1,35 @@
 
-.item-card {
-    max-width: 400px;
-    margin: 25px;
-    margin-top: 50px;
+.addlisting-form {
+    width: 700px;
+    margin-top: 100px;
     display: inline-block;    
-    padding: 15px;
+    padding: 25px;
     background-color: #343e48;
-    cursor: pointer;
-    transition: transform .3s;
-
-}
-.item-card:hover {
-    transform: scale(1.06);
 }
 
-.item-card h1 {
+.addlisting-form h1 {
     text-align: center;
     background-color: #343e48;
     color: var(--my-red);
-    margin-top: 10px;
+    padding: 25px;
     text-transform: uppercase;
     letter-spacing: .2em;
     text-decoration: none;
-    font-size: 22px;
+    font-weight: bold;
+    font-size: 28px;
 }
 
-.item-card .form-group {
+.addlisting-form .form-group {
     font-size: 20px;
     padding: 25px;
 }
 
-.btn-details {
-    background-color: var(--my-blue);
+.btn {
+    display:block;
+    width: 100%;
+    margin-bottom: 5px;
+    justify-content: space-between;
+    padding: 25px;
     letter-spacing: .1em;
     text-transform: uppercase;
     font-size: 18px;
@@ -40,27 +38,41 @@
 
 }
 
+.cancel-btn {
+    background-color: var(--my-red);
+}
+
+.addlisting-btn {
+    background-color: var(--my-green);
+}
+
 .btn:hover {
     cursor: pointer;
     background-color: var(--my-yellow);
 }
-.divide {
-    position:sticky;
-    margin-left: 15px;
-    border: 1px solid var(--my-green);
-    width: 340px;
-  }
 
-.item-card label {
+.addlisting-form input {
+    margin-top: 15px;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 15px;
+}
+.btn-container {
+    padding: 25px;
+}
+.addlisting-form label {
     letter-spacing: .1em;
     color: white;
-    text-align: left;
+}
+.link {
+    letter-spacing: .1em;
+    color: white;
+    text-decoration: underline;
+}
+.device-description {
+    height: 40px;
 }
 
-img {
-    max-width: 300px;
-    max-height: 200px;
-}
 @media (max-width:1160) {
     body {
         font-size: 40%;
