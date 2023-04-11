@@ -1,6 +1,6 @@
 
 .item-card {
-    max-width: 400px;
+    width: 375px;
     margin: 25px;
     display: inline-block;    
     padding: 15px;
@@ -43,7 +43,7 @@
     cursor: pointer;
     background-color: var(--my-yellow);
 }
-.divide {
+.divider-profile {
     position:sticky;
     margin-left: 15px;
     border: 1px solid var(--my-green);

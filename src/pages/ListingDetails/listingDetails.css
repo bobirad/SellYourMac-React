@@ -1,6 +1,6 @@
 
 .item-details {
-    max-width: 400px;
+    width: 375px;
     margin: 15px;
     margin-top: 50px;
     display: inline-block;    
@@ -51,11 +51,10 @@
     cursor: pointer;
     background-color: var(--my-yellow);
 }
-.divide {
+.divider-details {
     position:sticky;
-    margin-left: 15px;
     border: 1px solid var(--my-green);
-    width: 300px;
+    width: 340px;
   }
 
 .item-details label {

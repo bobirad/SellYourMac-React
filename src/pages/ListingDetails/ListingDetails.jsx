@@ -42,7 +42,7 @@ export function ListingDetails() {
     if (loading) {
         return <div>Loading...</div>;
     }
-    if (itemData) {
+    if ( auth.currentUser) {
         return (
             <div  key={id} className="item-details">
                 <div className="details-group img">
@@ -59,7 +59,7 @@ export function ListingDetails() {
                 <div className="details-group">
                     <label htmlFor="year">{itemData.year}</label>
                 </div>
-                <div className="divide"></div>
+                <div className="divider-details"></div>
 
                 <div className="details-group">
                     <label htmlFor="price">Price:</label>
@@ -67,7 +67,7 @@ export function ListingDetails() {
                 <div className="details-group">
                     <label htmlFor="price">{itemData.price.toLocaleString('en-US', { style: 'currency', currency: 'BGN' })}</label>
                 </div>
-                <div className="divide"></div>
+                <div className="divider-details"></div>
 
                 <div className="details-group">
                     <label htmlFor="description">Description:</label>

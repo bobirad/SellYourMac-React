@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import './profile.css';
 import { collection, query, getDocs,where } from "firebase/firestore";
 import { db,auth } from '../../config/firebase';
-import { Navigate } from 'react-router-dom';
+import { Navigate,Link } from 'react-router-dom';
+import { ListingDetails } from '../ListingDetails/ListingDetails';
 export function Profile() {
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -62,7 +63,7 @@ export function Profile() {
                     <div className="details-group">
                         <label htmlFor="year">{item.year}</label>
                     </div>
-                    <div className="divide"></div>
+                    <div className="divider-details"></div>
 
                     <div className="details-group">
                         <label htmlFor="price">Price:</label>
@@ -70,7 +71,7 @@ export function Profile() {
                     <div className="details-group">
                         <label htmlFor="price">{item.price.toLocaleString('en-US', { style: 'currency', currency: 'BGN' })}</label>
                     </div>
-                    <div className="divide"></div>
+                    <div className="divider-details"></div>
 
                     <div className="details-group">
                         <label htmlFor="description">Description:</label>
@@ -79,8 +80,10 @@ export function Profile() {
                         <label htmlFor="description">{item.description}</label>
                     </div>
                     <div>
+                        <Link to={`/catalog/${item.id}/edit`}>
                         <button className="btn-edit btn">Edit</button>
-                        <button className="btn-delete btn">Delete</button>
+                        </Link>
+                        <button onClick={ListingDetails.handleDelete} className="btn-delete btn">Delete</button>
                     </div>
                 
                 </div>

@@ -16,7 +16,7 @@ export function Login(props) {
         signInWithEmailAndPassword(auth, email, password)
             .then(() => {
                 setLoggedIn(true);
-                navigate('/');
+                navigate('/catalog');
             })
             .catch((error) => {
                 setLoggedIn(false);
