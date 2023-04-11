@@ -2,12 +2,15 @@ import React, { useEffect, useState } from 'react';
 import './profile.css';
 import { collection, query, getDocs,where } from "firebase/firestore";
 import { db,auth } from '../../config/firebase';
+import { Navigate } from 'react-router-dom';
 export function Profile() {
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
-
-
+   
     useEffect(() => {
+        if(!auth.currentUser){
+            Navigate('/login');
+        }
         const getItems = async () => {
             const itemsRef = query(collection(db, "items"));
 
@@ -25,7 +28,7 @@ export function Profile() {
 
         }
         getItems();
-    }, [items])
+    }, items)
 
     if (loading) {
         return <div className='loading'>Loading...</div>;
@@ -42,6 +45,7 @@ export function Profile() {
     }
     return (
         <div>
+            <h1 className="profile-title"> My Listings: </h1>
             {items.map((item) => (
                 <div key={item.id} id={item.id} className="item-details">
                     <div className="details-group img">
@@ -83,6 +87,5 @@ export function Profile() {
             ))
             }
         </div>
-
     )
 }

@@ -28,7 +28,7 @@ export const AddListing = () => {
           };
 
         try {
-            const itemRef = await addDoc(collection(db, "items"), newItem);
+            await addDoc(collection(db, "items"), newItem);
             navigate('/catalog');
         } catch (error) {
             alert("Error adding document: " + error);

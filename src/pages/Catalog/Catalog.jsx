@@ -24,7 +24,7 @@ export  function Catalog() {
 
     }
         getItems();
-    }, [items])
+    }, [])
 
     if (loading) {
         return <div className='loading'>Loading...</div>;
