@@ -46,6 +46,8 @@ export default function Navbar() {
             <nav className="navbar">
                 <div className="logo">Used Apple Devices</div>
                 <div className="divider"></div>
+                <div>
+
                 <ul>
                     <li>
                         <Link to="/" className="nav-link">
@@ -91,6 +93,8 @@ export default function Navbar() {
                     )}
 
                 </ul>
+                </div>
+
             </nav>
             <Routes>
                 <Route path="/catalog" element={<Catalog />} />

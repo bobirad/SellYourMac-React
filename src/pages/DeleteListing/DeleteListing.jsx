@@ -7,10 +7,10 @@ export function DeleteListing() {
 
     const navigate = useNavigate();
     const { id } = useParams();
-
+    const itemRef = doc(db, "items", id);
+    console.log(itemRef.imageUrl)
     const handleDelete = async (event) => {
         event.preventDefault();
-        const itemRef = doc(db, "items", id);
         const itemDoc = await getDoc(itemRef);
 
         if (auth.currentUser.email === itemDoc.data().owner) {
@@ -43,6 +43,7 @@ export function DeleteListing() {
             <div className="form-group">
                 <label>Are you sure you want to delete this item?</label>
             </div>
+           
             <div>
                 <button onClick={handleDelete} className='btn-yes btn'>Yes</button>
                 <Link to={-1}>

@@ -28,20 +28,21 @@ export function Catalog() {
     }, [])
 
     if (loading) {
-        return <h1>Loading...</h1>;
+        return <h1 className='catalog-title'>Loading...</h1>;
     }
 
     if (items.length === 0) {
         return (
-            <h1> No Listings!</h1>
+            <h1 className='catalog-title'> No Listings!</h1>
         )
     }
     return (
         <div >
+            <h1 className='catalog-title'>Items for sale</h1>
             {items.map((item) => (
                 <div key={item.id} className="item-card">
                     <div className="form-group">
-                        <img src={item.imageUrl} alt="item-pic"></img>
+                        <img className="img-item"src={item.imageUrl} alt="item-pic"></img>
                     </div>
                     <h1>{item.model}</h1>
                     <div className="form-group">
@@ -58,9 +59,9 @@ export function Catalog() {
                             </div>
                         </>
                         :
-                        <div>
+                        <div className='not-logged-in-box'>
                             <Link to='/login'>
-                                <button className="btn-login-for-details btn" >Log in for more details.</button>
+                                <button className="btn-login-for-details" >Log in for more details.</button>
                             </Link>
                         </div>
                     }

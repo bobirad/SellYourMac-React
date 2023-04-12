@@ -1,0 +1,51 @@
+
+article h1 {
+    text-align: center;
+    letter-spacing: .1em;
+    padding: 15px;
+    font-size: 30px;
+    transition: border-bottom 0.8s ease;
+    border-bottom: solid transparent 1.5px;
+}
+
+article h1:hover {
+        border-bottom: solid var(--my-green) 1.5px;
+        cursor: pointer;
+    
+}
+
+.articles-divider {
+    position: sticky;
+    justify-content: center;
+    border: 1px solid var(--my-green);
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 70px
+}
+
+.titles {
+    height: 80px;
+    margin: 70px;
+    color: rgb(111, 109, 109);
+}
+
+.products {
+
+    display: inline-block;
+    padding: 50px;
+}
+
+.products img {
+    max-height: 400px;
+    max-width: 400px;
+}
+
+.product-title {
+    font-size: 25px;
+    color: rgb(141, 141, 141);
+    font-weight: 600;
+}
+
+.product-title-box {
+    margin-top: 25px;
+}

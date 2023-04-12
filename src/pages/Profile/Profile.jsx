@@ -31,7 +31,7 @@ export function Profile() {
     }, [items])
 
     if (loading) {
-        return <div className='loading'>Loading...</div>;
+        return <h1 className='profile-title'>Loading...</h1>;
     }
 
 
@@ -45,7 +45,7 @@ export function Profile() {
     }
     return (
         <div>
-            <h1 className="profile-title"> My Listings: </h1>
+            <h1 className="profile-title"> My Listings</h1>
             {items.map((item) => (
                 <div key={item.id} id={item.id} className="item-details">
                     <div className="details-group img">
