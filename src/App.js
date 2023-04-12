@@ -11,10 +11,8 @@ function App() {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setCurrentUser(user);
-        console.log('Current user:', user.uid);
       } else {
         setCurrentUser(null);
-        console.log('No user currently logged in.');
       }
     });
 

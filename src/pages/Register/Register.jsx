@@ -7,7 +7,6 @@ import { useNavigate } from 'react-router-dom';
 
 export const Register = () => {
     const [email, setEmail] = useState("");
-    const [phoneNumber, setPhoneNumber] = useState("");
     const [password, setPassword] = useState("");
     const [repass, setRepass] = useState("");
     const [loggedIn, setLoggedIn] = useState(false);
@@ -19,7 +18,7 @@ export const Register = () => {
             return;
         }
         try {
-            createUserWithEmailAndPassword(auth, email, password, phoneNumber)
+            createUserWithEmailAndPassword(auth, email, password)
             setLoggedIn(true);
             navigate('/');
 
@@ -46,16 +45,7 @@ export const Register = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 />
             </div>
-            <div className="form-group">
-                <label htmlFor="username">Phone number:</label>
-                <input type="number"
-                name="phoneNumber" 
-                placeholder="Enter your phone number" 
-                value={phoneNumber}
-                required
-                onChange={(e) => setPhoneNumber(e.target.value)}
-                />
-            </div>
+            
             <div className="form-group">
                 <label htmlFor="password">Password:</label>
                 <input type="password"

@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import './profile.css';
-import { collection, query, getDocs,where } from "firebase/firestore";
-import { db,auth } from '../../config/firebase';
-import { Navigate,Link } from 'react-router-dom';
-import { ListingDetails } from '../ListingDetails/ListingDetails';
+import { collection, query, getDocs, where } from "firebase/firestore";
+import { db, auth } from '../../config/firebase';
+import { Navigate, Link } from 'react-router-dom';
+
 export function Profile() {
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
-   
+
     useEffect(() => {
-        if(!auth.currentUser){
+        if (!auth.currentUser) {
             Navigate('/login');
         }
-        const getItems = async () => {
-            const itemsRef = query(collection(db, "items"));
+        const getUserItems = async () => {
 
             try {
                 const q = query(collection(db, "items"), where("owner", "==", auth.currentUser.email));
@@ -28,8 +27,8 @@ export function Profile() {
             setLoading(false);
 
         }
-        getItems();
-    }, items)
+        getUserItems();
+    }, [items])
 
     if (loading) {
         return <div className='loading'>Loading...</div>;
@@ -81,11 +80,13 @@ export function Profile() {
                     </div>
                     <div>
                         <Link to={`/catalog/${item.id}/edit`}>
-                        <button className="btn-edit btn">Edit</button>
+                            <button className="btn-edit btn">Edit</button>
                         </Link>
-                        <button onClick={ListingDetails.handleDelete} className="btn-delete btn">Delete</button>
+                        <Link to={`/catalog/${item.id}/delete`}>
+                            <button className="btn-delete btn">Delete</button>
+                        </Link>
                     </div>
-                
+
                 </div>
             ))
             }

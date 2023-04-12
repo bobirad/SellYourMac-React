@@ -1,4 +1,4 @@
-import { useParams,Link, useNavigate } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { doc, getDoc, deleteDoc } from 'firebase/firestore';
 import { db, auth } from '../../config/firebase';
@@ -22,29 +22,19 @@ export function ListingDetails() {
             if (itemDoc.data().owner === auth.currentUser.email) {
                 setIsOwner(true);
             }
-            
+
             setLoading(false);
         };
 
         getItem();
     }, []);
-    async function handleDelete() {
-        const docRef = doc(db, "items", id);
-        await deleteDoc(docRef)
-            .then(() => {
-                alert("Document successfully deleted!");
-                navigate('/catalog');
-            })
-            .catch((error) => {
-                alert("Error removing item: ", error);
-            });
-    }
+    
     if (loading) {
         return <div>Loading...</div>;
     }
-    if ( auth.currentUser) {
+    if (auth.currentUser) {
         return (
-            <div  key={id} className="item-details">
+            <div key={id} className="item-details">
                 <div className="details-group img">
                     <img src={itemData.imageUrl} alt="item-pic"></img>
                 </div>
@@ -79,9 +69,11 @@ export function ListingDetails() {
                 {isOwner ?
                     <div>
                         <Link to={`/catalog/${id}/edit`}>
-                        <button className="btn-edit btn">Edit</button>
+                            <button className="btn-edit btn">Edit</button>
+                        </Link >
+                        <Link to={`/catalog/${id}/delete`}>
+                            <button className="btn-delete btn">Delete</button>
                         </Link>
-                        <button onClick={handleDelete} className="btn-delete btn">Delete</button>
                     </div>
                     : <div className="details-group">
                         <label htmlFor="contacs">Contact: {itemData.owner}</label>

@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import './catalog.css';
+import './../global.css'
 import { collection, query, getDocs } from "firebase/firestore";
 import { db, auth } from '../../config/firebase';
 import { Link } from 'react-router-dom'
 export function Catalog() {
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
-
+    
 
     useEffect(() => {
         const getItems = async () => {
@@ -27,20 +28,16 @@ export function Catalog() {
     }, [])
 
     if (loading) {
-        return <div className='loading'>Loading...</div>;
+        return <h1>Loading...</h1>;
     }
-
-
 
     if (items.length === 0) {
         return (
-            <div>
-                <label> No Listings!</label>
-            </div>
+            <h1> No Listings!</h1>
         )
     }
     return (
-        <div>
+        <div >
             {items.map((item) => (
                 <div key={item.id} className="item-card">
                     <div className="form-group">
@@ -60,14 +57,14 @@ export function Catalog() {
                                 <Link to={`/catalog/${item.id}`} type="" className="btn-details btn">Details</Link>
                             </div>
                         </>
-                    :
+                        :
                         <div>
                             <Link to='/login'>
                                 <button className="btn-login-for-details btn" >Log in for more details.</button>
                             </Link>
                         </div>
                     }
-                    
+
                 </div>
             ))
             }
@@ -75,3 +72,5 @@ export function Catalog() {
 
     )
 }
+
+

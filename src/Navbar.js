@@ -11,6 +11,8 @@ import { ListingDetails } from './pages/ListingDetails/ListingDetails';
 import { auth } from './config/firebase';
 import { useNavigate } from 'react-router-dom';
 import { EditListing } from "./pages/EditListing/EditListing";
+import { DeleteListing } from "./pages/DeleteListing/DeleteListing";
+
 
 export default function Navbar() {
     const [loggedIn, setLoggedIn] = useState(false);
@@ -94,6 +96,7 @@ export default function Navbar() {
                 <Route path="/catalog" element={<Catalog />} />
                 <Route path="/catalog/:id" element={<ListingDetails />} />            
                 <Route path="/catalog/:id/edit" element={<EditListing />} />
+                <Route path="/catalog/:id/delete" element={<DeleteListing />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/addlisting" element={<AddListing />} />
                 <Route path="/" element={<Home />} />

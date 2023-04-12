@@ -1,0 +1,35 @@
+.delete-form {
+    width: 500px;
+    height: 300px;
+    margin: 15px;
+    margin-top: 50px;
+    display: inline-block;    
+    padding: 15px;
+    background-color: #343e48;
+    cursor: pointer;
+    transition: transform .3s;
+}
+.form-group {
+    font-size: 20px;
+    padding: 25px;
+}
+label{
+    letter-spacing: .1em;
+
+    color: #ffffff;
+}
+
+.btn {
+    display:block;
+    width: 100%;
+    margin-top: 15px;
+    justify-content: space-between;
+    transition: all 300ms ease;
+}
+.btn-no {
+    background-color: var(--my-green);
+
+}
+.btn-yes {
+    background-color: var(--my-red);
+}
