@@ -32,7 +32,6 @@ export function ListingDetails() {
     if (loading) {
         return <div>Loading...</div>;
     }
-    if (auth.currentUser) {
         return (
             <div key={id} className="item-details">
                 <div className="details-group img">
@@ -81,6 +80,6 @@ export function ListingDetails() {
                 }
             </div>
         )
-    }
-
 }
+
+

@@ -2,16 +2,13 @@ import React, { useEffect, useState } from 'react';
 import './profile.css';
 import { collection, query, getDocs, where } from "firebase/firestore";
 import { db, auth } from '../../config/firebase';
-import { Navigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export function Profile() {
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        if (!auth.currentUser) {
-            Navigate('/login');
-        }
         const getUserItems = async () => {
 
             try {
@@ -33,8 +30,6 @@ export function Profile() {
     if (loading) {
         return <h1 className='profile-title'>Loading...</h1>;
     }
-
-
 
     if (items.length === 0) {
         return (

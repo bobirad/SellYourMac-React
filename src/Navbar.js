@@ -12,6 +12,7 @@ import { auth } from './config/firebase';
 import { useNavigate } from 'react-router-dom';
 import { EditListing } from "./pages/EditListing/EditListing";
 import { DeleteListing } from "./pages/DeleteListing/DeleteListing";
+import { RouteGuard } from "./Guards/RouteGuard";
 
 
 export default function Navbar() {
@@ -98,11 +99,31 @@ export default function Navbar() {
             </nav>
             <Routes>
                 <Route path="/catalog" element={<Catalog />} />
-                <Route path="/catalog/:id" element={<ListingDetails />} />            
-                <Route path="/catalog/:id/edit" element={<EditListing />} />
-                <Route path="/catalog/:id/delete" element={<DeleteListing />} />
-                <Route path="/profile" element={<Profile />} />
-                <Route path="/addlisting" element={<AddListing />} />
+                <Route path="/catalog/:id" element={
+                    <RouteGuard>
+                        <ListingDetails />
+                    </RouteGuard>
+                    }/>            
+                <Route path="/catalog/:id/edit" element={
+                    <RouteGuard>
+                        <EditListing />
+                    </RouteGuard>
+                    }/>
+                <Route path="/catalog/:id/delete" element={
+                    <RouteGuard>
+                        <DeleteListing />
+                    </RouteGuard>
+                    }/>
+                <Route path="/profile" element={
+                    <RouteGuard>
+                        <Profile />
+                    </RouteGuard>
+                    }/>
+                <Route path="/addlisting" element={
+                <RouteGuard>
+                    <AddListing />
+                </RouteGuard>
+                }/>
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
