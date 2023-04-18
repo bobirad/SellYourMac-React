@@ -1,71 +1,36 @@
-# Getting Started with Create React App
+# React SPA with Firebase backend
+This project is a single-page application built with React and connected to a Firebase backend. It is a web app where users can register and buy or sell used Apple devices.
+
+## Installation
+1. Clone the project repository: `git clone https://github.com/bobirad/SellYourMac-React.git`
+2. Navigate to the project directory: `cd your-repo`
+3. Install the dependencies: `npm install`
+
+## Configuration
+1. Create a new Firebase project and enable Authentication and Firestore.
+2. Copy the Firebase project credentials and paste them into a new file called `firebase.js` in /src/config/ directory.
+
+## Usage
+1. Start the development server: `npm start`
+2. Interact with the application at http://localhost:3000
+
+## Register and Login
+In order to successfuly register or login guests must fill in a valid email and a password of atleast 6 characters.
+
+
+## Guests
+The guests of the website are able to browse Home and Catalog page, with limitations of the details of every listing. They can only see the model and the production year of the device.
+
+## Logged in users
+Logged in users can access full functionality. They can create their own listings, edit or delete them. They also have access to the profile page, where they can see all listings listed by the logged in user. In the Catalog page they can view Details page of every listing and Edit or Delete the ones they own or to see other sellers email as a contact.
 
 
 
-## Available Scripts
+## Credits
 
-In the project directory, you can run:
+This project was built using [React](https://reactjs.org/) and [Firebase](https://firebase.google.com/).
 
-### `npm start`
+## License
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This project is licensed under the MIT License.```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# SellYourMac-React
