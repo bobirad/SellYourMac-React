@@ -8,7 +8,6 @@ export function DeleteListing() {
     const navigate = useNavigate();
     const { id } = useParams();
     const itemRef = doc(db, "items", id);
-    console.log(itemRef.imageUrl)
     const handleDelete = async (event) => {
         event.preventDefault();
         const itemDoc = await getDoc(itemRef);

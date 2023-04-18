@@ -1,7 +1,9 @@
 
-.item-card {
-    width: 375px;
-    margin: 25px;
+.profile-items{
+
+    width: 400px;
+    height: 970px;
+    margin: 40px 15px ;
     display: inline-block;    
     padding: 15px;
     background-color: #343e48;
@@ -9,11 +11,11 @@
     transition: transform .3s;
 
 }
-.item-card:hover {
+.profile-items:hover {
     transform: scale(1.06);
 }
 
-.item-card h1 {
+.profile-items h1 {
     text-align: center;
     background-color: #343e48;
     color: var(--my-red);
@@ -23,7 +25,7 @@
     font-size: 22px;
 }
 
-.item-card .form-group {
+.profile-items .profile-item-group {
     font-size: 20px;
     padding: 25px;
 }
@@ -49,7 +51,7 @@
     width: 340px;
   }
 
-.item-card label {
+.profile-items label {
     letter-spacing: .1em;
     color: white;
     text-align: left;

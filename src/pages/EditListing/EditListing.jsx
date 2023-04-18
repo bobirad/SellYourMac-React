@@ -62,8 +62,9 @@ export function EditListing() {
     if (loading) {
         return <div>Loading...</div>;
     }
-
-    if (isOwner) {
+    if(!isOwner){
+        return <h1>Can't edit this item. You are not the owner.</h1>
+    }else {
         return (
             <>
                 <form className="addlisting-form" onSubmit={handleEditListing}>
@@ -129,12 +130,11 @@ export function EditListing() {
             </>
 
         )
-    }else {
-        alert('You are not the owner of the content!');
-        navigate(`/catalog/${id}`);
     }
-
+        
 }
+
+
 
 
 

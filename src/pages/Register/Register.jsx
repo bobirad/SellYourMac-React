@@ -13,9 +13,15 @@ export const Register = () => {
     const navigate = useNavigate();
     const handleRegister = (event) => {
         event.preventDefault();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
         if(password !== repass){
             alert('Passwords dont match');
             return;
+        }
+        if(!emailRegex.test(email)){
+            alert('Email not valid');
+            return null;
         }
         try {
             createUserWithEmailAndPassword(auth, email, password)

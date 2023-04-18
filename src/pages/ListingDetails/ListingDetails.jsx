@@ -1,10 +1,9 @@
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { doc, getDoc, deleteDoc } from 'firebase/firestore';
+import { doc, getDoc } from 'firebase/firestore';
 import { db, auth } from '../../config/firebase';
 import './listingDetails.css'
 export function ListingDetails() {
-    const navigate = useNavigate();
     const { id } = useParams();
     const [loading, setLoading] = useState(true);
     const [itemData, setItemData] = useState(null);
@@ -57,13 +56,15 @@ export function ListingDetails() {
                     <label htmlFor="price">{itemData.price.toLocaleString('en-US', { style: 'currency', currency: 'BGN' })}</label>
                 </div>
                 <div className="divider-details"></div>
-
                 <div className="details-group">
                     <label htmlFor="description">Description:</label>
                 </div>
                 <div className="details-group">
                     <label htmlFor="description">{itemData.description}</label>
                 </div>
+                <div className="divider-details"></div>
+
+
 
                 {isOwner ?
                     <div>

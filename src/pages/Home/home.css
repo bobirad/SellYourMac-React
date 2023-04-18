@@ -1,24 +1,24 @@
 
-article h1 {
+.titles {
     text-align: center;
     letter-spacing: .1em;
     padding: 15px;
     font-size: 30px;
-    transition: border-bottom 0.8s ease;
     border-bottom: solid transparent 1.5px;
 }
 
-article h1:hover {
-        border-bottom: solid var(--my-green) 1.5px;
+.titles:hover {
+        border-bottom: solid  var(--my-green) 1.5px;
         cursor: pointer;
-    
+        transition: border-bottom 0.8s ease;
+
 }
 
 .articles-divider {
     position: sticky;
     justify-content: center;
     border: 1px solid var(--my-green);
-    width: 90%;
+    width: 88%;
     margin: 0 auto;
     margin-top: 70px
 }

@@ -1,9 +1,10 @@
 
 .item-details {
+    
     opacity: 90%;
     width: 375px;
     margin: 15px;
-    margin-top: 120px;
+    margin-top: 100px;
     display: inline-block;    
     padding: 15px;
     background-color: #343e48;
@@ -55,7 +56,7 @@
 .divider-details {
     position:sticky;
     border: 1px solid var(--my-green);
-    width: 340px;
+    width: 345px;
   }
 
 .item-details label {

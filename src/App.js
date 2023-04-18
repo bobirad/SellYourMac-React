@@ -3,6 +3,7 @@ import Navbar from './Navbar';
 import { useEffect, useState } from 'react';
 import { auth } from './config/firebase';
 import { onAuthStateChanged } from 'firebase/auth';
+import {SearchBar} from './SearchBar';
 
 function App() {
   let [currentUser, setCurrentUser] = useState(null);
@@ -20,7 +21,7 @@ function App() {
   }, []);
   return (
       <div className="App">
-        <Navbar user = {currentUser}/>
+        <Navbar/>
       </div>
   );
 }

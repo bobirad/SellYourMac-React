@@ -4,16 +4,17 @@ import './../global.css'
 import { Link } from "react-router-dom";
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { collection, addDoc } from "firebase/firestore";
-import { db, auth } from '../../config/firebase';
+import { collection, addDoc, Timestamp } from "firebase/firestore";
+import { db, auth, firebaseApp } from '../../config/firebase';
 
 
 export const AddListing = () => {
-    const [isVisible, setIsVisible] = useState(false);
+    //const [isVisible, setIsVisible] = useState(false);
+    
 
-    useEffect(() => {
+    /*useEffect(() => {
         setIsVisible(true);
-    }, []);
+    }, []);*/
 
     const [model, setModel] = useState("");
     const [year, setYear] = useState();
@@ -21,10 +22,14 @@ export const AddListing = () => {
     const [description, setDescription] = useState("");
     const [imageUrl, setImageUrl] = useState("");
 
-
     const navigate = useNavigate();
     const handleAddListing = async (event) => {
+        //const formattedDateTime = date.toLocaleString("en-US");
         event.preventDefault();
+        const newDate = new Date()
+        const timeStamp = newDate.getTime()
+
+
         //const ownerEmail = currentUser ? currentUser.email : 'unknown';
         const newItem = {
             model: model,
@@ -32,7 +37,8 @@ export const AddListing = () => {
             price: Number(price),
             description: description,
             imageUrl: imageUrl,
-            owner: auth.currentUser.email
+            owner: auth.currentUser.email,
+            timeStamp: timeStamp
         };
 
         try {
@@ -40,6 +46,7 @@ export const AddListing = () => {
             navigate('/catalog');
         } catch (error) {
             alert("Error adding document: " + error);
+            return null;
         }
     }
 

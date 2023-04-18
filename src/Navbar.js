@@ -7,7 +7,6 @@ import { Register } from './pages/Register/Register';
 import { Profile } from './pages/Profile/Profile';
 import { AddListing } from './pages/AddListing/AddListing';
 import { ListingDetails } from './pages/ListingDetails/ListingDetails';
-//import { PrivateRoute } from './components/auth/PrivateRoute';
 import { auth } from './config/firebase';
 import { useNavigate } from 'react-router-dom';
 import { EditListing } from "./pages/EditListing/EditListing";
@@ -47,53 +46,53 @@ export default function Navbar() {
             <nav className="navbar">
                 <div className="logo">Used Apple Devices</div>
                 <div className="divider"></div>
-                <div>
 
-                <ul>
-                    <li>
-                        <Link to="/" className="nav-link">
-                            <button>home</button>
-                        </Link>
-                    </li>
-                    <li>
-                        <Link to="/catalog" className="nav-link">
-                            <button>catalog</button>
-                        </Link>
-                    </li>
-                    {loggedIn ? (
-                        <>
-                            <li>
-                                <Link to="/addlisting" className="nav-link">
-                                    <button>sell an item</button>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/profile" className="nav-link">
-                                    <button>profile</button>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link  className="nav-link">
-                                    <button onClick={handleLogOut}>log out</button>
-                                </Link>
-                            </li>
-                        </>
-                    ) : (
-                        <>
-                            <li>
-                                <Link to="/login" className="nav-link">
-                                    <button>log in</button>
-                                </Link>
-                            </li>
-                            <li>
-                                <Link to="/register" className="nav-link">
-                                    <button>register</button>
-                                </Link>
-                            </li>
-                        </>
-                    )}
+                <div className="navigation">
+                    <ul>
+                        <li>
+                            <Link to="/" className="nav-link">
+                                <button>home</button>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/catalog" className="nav-link">
+                                <button>catalog</button>
+                            </Link>
+                        </li>
+                        {loggedIn ? (
+                            <>
+                                <li>
+                                    <Link to="/addlisting" className="nav-link">
+                                        <button>sell an item</button>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/profile" className="nav-link">
+                                        <button>profile</button>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link className="nav-link">
+                                        <button onClick={handleLogOut}>log out</button>
+                                    </Link>
+                                </li>
+                            </>
+                        ) : (
+                            <>
+                                <li>
+                                    <Link to="/login" className="nav-link">
+                                        <button>log in</button>
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/register" className="nav-link">
+                                        <button>register</button>
+                                    </Link>
+                                </li>
+                            </>
+                        )}
 
-                </ul>
+                    </ul>
                 </div>
 
             </nav>
@@ -103,27 +102,27 @@ export default function Navbar() {
                     <RouteGuard>
                         <ListingDetails />
                     </RouteGuard>
-                    }/>            
+                } />
                 <Route path="/catalog/:id/edit" element={
                     <RouteGuard>
                         <EditListing />
                     </RouteGuard>
-                    }/>
+                } />
                 <Route path="/catalog/:id/delete" element={
                     <RouteGuard>
                         <DeleteListing />
                     </RouteGuard>
-                    }/>
+                } />
                 <Route path="/profile" element={
                     <RouteGuard>
                         <Profile />
                     </RouteGuard>
-                    }/>
+                } />
                 <Route path="/addlisting" element={
-                <RouteGuard>
-                    <AddListing />
-                </RouteGuard>
-                }/>
+                    <RouteGuard>
+                        <AddListing />
+                    </RouteGuard>
+                } />
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />

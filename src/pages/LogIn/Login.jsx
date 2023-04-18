@@ -14,6 +14,13 @@ export function Login(props) {
 
     const handleLogin = (event) => {
         event.preventDefault();
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if(!emailRegex.test(email)){
+            alert('Email not valid');
+            return null;
+        }
+        
         signInWithEmailAndPassword(auth, email, password)
             .then(() => {
                 setLoggedIn(true);
