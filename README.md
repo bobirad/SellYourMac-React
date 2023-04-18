@@ -1,4 +1,4 @@
-# React SPA with Firebase backend
+# SELL-YOUR-MAC-REACT
 This project is a single-page application built with React and connected to a Firebase backend. It is a web app where users can register and buy or sell used Apple devices.
 
 ## Installation
