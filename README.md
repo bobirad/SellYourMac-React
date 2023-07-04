@@ -2,8 +2,6 @@
 # SELL-YOUR-MAC-REACT
 This project is a single-page application built with React and connected to a Firebase backend. It is a web app where users can register and buy or sell used Apple devices.
 
-<img width="1437" alt="Screen Shot 2023-06-27 at 1 55 45 PM" src="https://github.com/bobirad/SellYourMac-React/assets/104485957/0c2ee4a1-5377-4c2a-9087-984733101b39">
-
 ## Installation
 1. Clone the project repository: `git clone https://github.com/bobirad/SellYourMac-React.git`
 2. Navigate to the project directory: `cd your-repo`
@@ -36,4 +34,28 @@ This project was built using [React](https://reactjs.org/) and [Firebase](https:
 ## License
 
 This project is licensed under the MIT License.```
+
+## HOME-PAGE
+
+<img width="1437" alt="Screen Shot 2023-06-27 at 1 55 45 PM" src="https://github.com/bobirad/SellYourMac-React/assets/104485957/0c2ee4a1-5377-4c2a-9087-984733101b39">
+
+## CATALOG-PAGE
+
+<img width="1436" alt="Screen Shot 2023-06-27 at 1 55 24 PM" src="https://github.com/bobirad/SellYourMac-React/assets/104485957/2800e34e-b2ed-44d3-b87a-c7e33615653d">
+
+## SELL-AN-ITEM-PAGE
+
+<img width="1429" alt="Screen Shot 2023-06-27 at 1 55 32 PM" src="https://github.com/bobirad/SellYourMac-React/assets/104485957/c12eb55c-81b3-499d-b7f6-7777a00ac17e">
+
+
+## PROFILE-PAGE
+
+<img width="1436" alt="Screen Shot 2023-06-27 at 1 55 42 PM" src="https://github.com/bobirad/SellYourMac-React/assets/104485957/8ec16cd9-9ef5-4bb2-ba46-01295b62f2ad">
+5c-81b3-499d-b7f6-7777a00ac17e">
+
+## MOBILE-PHONE-PREVIEW
+
+![IMG_2801](https://github.com/bobirad/SellYourMac-React/assets/104485957/0a70eaf6-aa68-44fb-8a4d-d721bdaae0d8)
+
+
 
