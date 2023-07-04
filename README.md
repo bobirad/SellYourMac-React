@@ -2,8 +2,7 @@
 # SELL-YOUR-MAC-REACT
 This project is a single-page application built with React and connected to a Firebase backend. It is a web app where users can register and buy or sell used Apple devices.
 
-![Alt text](https://ibb.co/sQtV7HF "Optional title")
-
+https://ibb.co/sQtV7HF
 
 ## Installation
 1. Clone the project repository: `git clone https://github.com/bobirad/SellYourMac-React.git`
